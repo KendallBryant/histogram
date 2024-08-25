@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Histogram Maker</h1>
+    <div>
+        <label for="dataInput">Enter Data (comma-separated):</label>
+        <input type="text" id="dataInput" value="8, 12, 11, 9, 9, 12, 10, 14, 12, 7">
+    </div>
+    <div>
+        <label for="title">Graph Title:</label>
+        <input type="text" id="title" value="Histogram Title">
+    </div>
+    <div>
+        <label for="xLabels">X-axis Labels:</label>
+        <input type="text" id="xLabels" value="x-axis label">
+    </div>
+    <div>
+        <label for="yLabels">Y-axis Labels:</label>
+        <input type="text" id="yLabels" value="y-axis label">
+    </div>
+    <div>
+        <label for="intervals">Number of Intervals:</label>
+        <input type="number" id="intervals" value="4">
+    </div>
+
+    <button onclick="generateHistogram()">Generate Histogram</button>
+    <button onclick="refreshPage()">Refresh</button>
+
+    <p>Once you generate your graph, click the bars to customize their color.</p>
+
+    <canvas id="histogramCanvas" width="600" height="400"></canvas>
+
+    <!-- Hidden color picker for changing bar colors -->
+    <input type="color" id="colorPicker" style="display:none;">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
